@@ -1,0 +1,33 @@
+<form class="example-form" [formGroup]="employeeForm" (ngSubmit)="createEmployee()">
+    <mat-card>
+        <mat-card-content>
+            <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name" formControlName="name" >
+            </mat-form-field>
+            </p>
+            <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Salary</mat-label>
+                <input matInput placeholder="Salary" formControlName="salary" >
+            </mat-form-field>
+            </p>
+            <p>
+            <mat-form-field appearance="fill">
+                <mat-label>Department</mat-label>
+                <mat-select formControlName="departmentId">
+                    <mat-option *ngFor="let department of departments" [value]="department.departmentId">
+                        {{department.name}}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+        </mat-card-content>
+        <mat-card-footer class="example-button-container">
+            <div class="example-button-row" style="margin: 2px;">
+                <button mat-raised-button color="primary">Create</button> | <a (click)="closePopUp()" mat-raised-button color="accent">Close</a>
+            </div>
+        </mat-card-footer>
+    </mat-card>
+</form>

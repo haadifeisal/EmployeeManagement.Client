@@ -1,1 +1,26 @@
-<p>employee-detail works!</p>
+<div class="container">
+    <div class="example-button-row" style="margin-bottom: 5px;">
+        <button mat-raised-button color="primary" [routerLink]="['/']"><i class="fa fa-home"></i> Home</button>
+    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{employee.name}}</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+            <mat-list role="list">
+                <mat-list-item>
+                    <div matLine>
+                        Salary: {{employee.salary}}
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <div matLine>
+                        DepartmentId: {{employee.departmentId}}
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>
